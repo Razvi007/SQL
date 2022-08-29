@@ -1,0 +1,34 @@
+-Creating a boxing glove store database
+CREATE TABLE Gloves (ID integer primary key, brand TEXT, ounces integer, Velcro_or_laces TEXT, Color TEXT, Price INTEGER  );
+
+INSERT INTO Gloves VALUES 
+(1, 'Winning', 16, 'laces', 'baby_blue', 320),
+(2, 'Cleto_Reyes', 14, 'laces','red', 240),
+(3, 'Hayabusa', 16, 'velcro', 'white', 100),
+(4, 'Pro_Mex', 10, 'laces','green', 150),
+(5, 'Rival', 12, 'laces','gold', 170),
+(6, 'Everlast', 8, 'laces','red', 160),
+(7, 'Fairtex', 14, 'velcro','black', 120),
+(8, 'Ring_To_Cage', 12, 'velcro','black', 130),
+(9, 'Twins', 16, 'velcro','black_with_flames', 100),
+(10, 'RingSide', 12, 'laces','blue', 150),
+(11, 'Venum', 16, 'velcro','black', 140),
+(12, 'Grant', 8, 'laces','red', 300),
+(13, 'Title',16, 'velcro','black', 120),
+(14, 'Sanabul', 14, 'velcro','light_green', 110),
+(15, 'Fly', 10, 'laces','white', 340);
+
+-Ordering the gloves by the price from cheapest to most expensive.
+SELECT * FROM Gloves
+ORDER BY PRICE;
+
+-Finding the avg price among gloves
+SELECT avg(price)
+FROM Gloves;
+
+-What is the most expensive glove to the cheapest?
+SELECT brand, color, price
+FROM Gloves
+ORDER BY price DESC;
+
+

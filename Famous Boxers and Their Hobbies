@@ -1,0 +1,26 @@
+*create table of boxers and some general info*
+
+CREATE TABLE boxers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, weight REAL, ethnicity TEXT);
+
+INSERT INTO boxers VALUES (1, "GGG", 40, 159, "Kazakh");
+INSERT INTO boxers VALUES (2, "Canelo", 32, 168, "Mexican");
+INSERT INTO boxers VALUES (3, "Lomachenko", 34, 134, "Ukrainiain");
+INSERT INTO boxers VALUES (4, "Inoue", 29, 115, "Japanese");
+
+*create another table of hobbies and link them together with "boxer id"*
+
+CREATE TABLE hobbies (Id INTEGER PRIMARY KEY, name TEXT, boxerId INTEGER);
+
+INSERT INTO hobbies VALUES (1, "Eating", 1);
+INSERT INTO hobbies VALUES (2, "Watching_sports", 3);
+INSERT INTO hobbies VALUES (3, "Fishing", 3);
+INSERT INTO hobbies VALUES (4, "Horseback_riding", 2);
+INSERT INTO hobbies VALUES (5, "Golf", 2);
+INSERT INTO hobbies VALUES (6, "Watching_movies", 4);
+
+*Join boxers with their hobbies to be shown in a table where you can see their name, where they came from, and their hobbies. *
+
+SELECT boxers.name, boxers.ethnicity, hobbies.name
+FROM boxers
+JOIN hobbies
+WHERE boxers.id=hobbies.boxerId
